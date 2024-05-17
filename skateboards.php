@@ -61,7 +61,7 @@ $images = glob('img/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
         <?php endforeach; ?>
     </table>
     <br><br>
-    <!-- <a href="crear_concierto.php"> Crear Concierto >>></a> -->
+    <a href="insert_products.php"> Insert new product >>></a>
 </body>
 
 </html>
