@@ -17,6 +17,15 @@ try {
     
 }
 
-$skates = $myPDO->query("SELECT name, brand, price FROM skates");
+$skates = $myPDO->query("SELECT id, name, brand, price FROM skates");
+
+// Function to get skate details by ID, receives the id as the parameter, and retrieves all the info of the product
+function getSkateById($id) {
+    global $myPDO;
+    $stmt = $myPDO->prepare("SELECT id, name, brand, description, photo, price FROM skates WHERE id = :id");
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
 
 ?>
